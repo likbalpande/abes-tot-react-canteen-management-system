@@ -6,7 +6,7 @@ const ProductsPage = () => {
     const [products, setProducts] = useState([]);
 
     const getData = async () => {
-        const resp = await fetch("http://localhost:1401/api/v1/products");
+        const resp = await fetch(import.meta.env.VITE_BACKEND_URL + "/api/v1/products");
         const data = await resp.json();
         console.log(data);
         setProducts(data.data.products);
